@@ -45,7 +45,8 @@ Connectors
 
 This is for flight controls.
 
-pitch roll yaw flaps landing gear speedbrakes
+channels are :
+    pitch roll yaw flaps landing gear speedbrakes
 
 
 
@@ -159,3 +160,50 @@ BudDavis ➜ /workspaces/jsbsimcommander (master) $ find ./ -name "*.c*"
 ./src/mattplot/Condition.cpp
 ./src/mattplot/NomoFrm.cpp
 ./src/mattplot/Table.cpp
+
+
+Here are the sections from the xml xsd file
+<xs:element ref="fileheader" />
+        <!--The file creation information. -->
+        <xs:element ref="metrics" />
+        <!--The geometric information for the aircraft model. -->
+        <xs:element ref="mass_balance" />
+        <!-- The weight and balance information for the aircraft model.</xs:annotation -->
+        <xs:element ref="ground_reactions" minOccurs="0" />
+        <!--The landing gear and/or structural contact point information for the aircraft model. -->
+        <xs:element ref="external_reactions" minOccurs="0" />
+        <!--The external reactions information for the aircraft model. -->
+        <xs:element ref="buoyant_forces" minOccurs="0" />
+        <!--The external reactions information for the aircraft model. -->
+        <xs:element ref="propulsion" minOccurs="0" />
+        <!-- The propulsion system information for the aircraft model. -->
+        <xs:element ref="system" minOccurs="0" maxOccurs="unbounded"/>
+        <!-- The systems reference -->
+        <xs:element ref="autopilot" minOccurs="0" />
+        <!-- The autopilot definition for the aircraft model. -->
+        <xs:element ref="flight_control" minOccurs="0" />
+        <!-- The flight control system for the aircraft model. -->
+        <xs:element ref="aerodynamics" minOccurs="0" />
+        <!-- The aerodynamics definition for the aircraft model. -->
+        <xs:element ref="input" minOccurs="0" />
+        <!-- The input definition for the aircraft model. -->
+        <xs:element ref="output" minOccurs="0" maxOccurs="unbounded" />
+        <!--The output specification for the aircraft model. -->
+      </xs:sequence>
+
+Purpose:
+This program is a replacement for "jsbsimcommander", which has rotted into uselessness.  
+The program will edit the contents of existing JSBSim xml configuration files, with a gui interface.
+
+Example Uses:
+The c172p.xml file used in JSBSim has an empty weight of 1500 LBS.  It is desired to change that value to 1501 LBS.
+The user would 
+* Open up the c172p.xml file
+* Select "metrics" from the top level menu.
+* The user would then be able to see all of data items in "metrics".
+* The user would chane the empty weight.
+* The user would then select the "save file" icon
+* The file c172p.xml would be written.
+
+
+
