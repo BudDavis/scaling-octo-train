@@ -93,7 +93,7 @@ public class FileChooserDemo extends JPanel
 
         //Add the buttons and the log to this panel.
         add(buttonPanel, BorderLayout.PAGE_END);
-        add(logScrollPane, BorderLayout.CENTER);
+        //add(logScrollPane, BorderLayout.CENTER);
     }
 
     public void actionPerformed(ActionEvent e) {

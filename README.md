@@ -60,7 +60,7 @@ https://www.fltk.org/doc-1.4/basics.html
 
 https://rawgit.com/wxFormBuilder/ticpp/docs/ticpp.html
 
-https://github.com/JSBSim-Team/jsbsim
+git 
 
 https://stackoverflow.com/questions/91179/automated-tests-for-java-swing-guis
 
@@ -75,7 +75,7 @@ mvn package
 
 to compile and run:
 
-java -cp target/JSBSimEdit-1.0-SNAPSHOT.jar uta.cse.cse3310.JSBSimEdit.AppHello World!
+java -cp target/JSBSimEdit-1.0-SNAPSHOT.jar uta.cse.cse3310.JSBSimEdit.App
 
 
 
