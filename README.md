@@ -11,14 +11,7 @@ Project Set up
 System Design
 * Leave everything in the xml data structure`
 * create query / update layer
-
-Each change activity will have
-* a ranking for requirements, design, implementation, and test
-* * 0 - no content
-* * 1 - minimal content
-* * 2 - significant content
-
-15 students, 10 weeks = 150 change packages.  how far can it go?
+ 
 
 * Overall Program
 * Read / Write / Files / Access to data
