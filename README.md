@@ -57,7 +57,12 @@ git
 
 https://stackoverflow.com/questions/91179/automated-tests-for-java-swing-guis
 
+parsing xml with java:
 
+https://docs.oracle.com/javase/tutorial/jaxb/intro/index.html
+which turned into https://github.com/eclipse-ee4j/jaxb-ri
+which goes here:
+         https://eclipse-ee4j.github.io/jaxb-ri/
  
 What I used to make the java project:
 
