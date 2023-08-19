@@ -1,6 +1,10 @@
 # scaling-octo-train
 
 
+ mvn exec:java -Dexec.mainClass=uta.cse.cse3310.JSBSimEdit.App
+
+ 
+
 Project Set up
 * maven create
 * one window, with tabs
