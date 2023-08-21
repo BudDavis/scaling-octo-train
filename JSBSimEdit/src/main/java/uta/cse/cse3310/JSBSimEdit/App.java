@@ -8,7 +8,7 @@ import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Unmarshaller;
 import jakarta.xml.bind.Marshaller;
 import generated.FdmConfig;
- 
+
 public class App {
   public static void main(String[] args) {
     System.out.println("Hello World!");
@@ -17,25 +17,30 @@ public class App {
     try {
 
       File file = new File("f16.xml");
-      JAXBContext jaxbContext = JAXBContext.newInstance(FdmConfig.class);
+      // JAXBContext jaxbContext = JAXBContext.newInstance(FdmConfig.class);
 
-      Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-      FdmConfig cfg = (FdmConfig) jaxbUnmarshaller.unmarshal(file);
+      // Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+      // FdmConfig cfg = (FdmConfig) jaxbUnmarshaller.unmarshal(file);
 
-      System.out.println(cfg.getName());
-       
+      // System.out.println(cfg.getName());
 
       JAXBContext jc = JAXBContext.newInstance("generated");
+
+      Unmarshaller um = jc.createUnmarshaller();
+      FdmConfig cfg = (FdmConfig) um.unmarshal(file);
+    
+      System.out.println(cfg);
+      System.out.println(cfg.getFileheader().getCopyright());
+      System.out.println(cfg.getFileheader().getVersion() );
+      System.out.println(cfg.getAerodynamics().getAxis().get(0).getName());
+      System.out.println(cfg.getAerodynamics().getAxis().get(0).getFunction());
+      System.out.println(cfg.getAerodynamics().getAxis().get(0).getClass());
+
+
       Marshaller m = jc.createMarshaller();
+      m.setProperty("jaxb.formatted.output", true);
       m.marshal(cfg, System.out);
 
-
-      // unmarshal from foo.xml
-      //Unmarshaller u = jc.createUnmarshaller();
-      // FooObject fooObj = (FooObject) u.unmarshal(new File("f16.xml"));
-
-      // marshal to System.out
-     
     } catch (JAXBException e) {
       e.printStackTrace();
     }
