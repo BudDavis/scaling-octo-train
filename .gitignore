@@ -1,1 +1,2 @@
-./JSBSimEdit/src/main/java/generated/*
+JSBSimEdit/src/main/java/generated/*
+JSBSimEdit/target/*
