@@ -109,7 +109,7 @@
           <sources>
             <source>src/main/xsd/JSBSim.xsd</source>
           </sources>
-          <outputDirectory>${basedir}/src/main/java</outputDirectory>
+          <outputDirectory>${basedir}/target</outputDirectory>
           <clearOutputDir>false</clearOutputDir>
         </configuration>
       </plugin>

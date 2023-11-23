@@ -8,6 +8,10 @@ import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Unmarshaller;
 import jakarta.xml.bind.Marshaller;
 import generated.FdmConfig;
+import generated.Force;
+import generated.Location;
+import generated.Direction;
+
 
 public class App {
   public static void main(String[] args) {
@@ -36,6 +40,28 @@ public class App {
       System.out.println(cfg.getAerodynamics().getAxis().get(0).getFunction());
       System.out.println(cfg.getAerodynamics().getAxis().get(0).getClass());
 
+
+      Force F = new Force();
+      F.setName("someForce");
+      F.setFrame("BODY");
+
+      Location L = new Location();
+      L.setUnit("IN");
+      L.setX(1.0);
+      L.setY(2.0);
+      L.setZ(3.0);
+
+      F.setLocation(L);
+
+      Direction D = new Direction();
+      D.setX(10.0);
+      D.setY(20.0);
+      D.setZ(30.0);
+
+      F.setDirection(D);
+
+      cfg.getExternalReactions().getForce().add(F);
+      cfg.getExternalReactions().getProperty().add("cromulent");
 
       Marshaller m = jc.createMarshaller();
       m.setProperty("jaxb.formatted.output", true);
